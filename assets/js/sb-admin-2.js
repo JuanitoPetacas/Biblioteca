@@ -10,10 +10,9 @@
     };
   });
 
-  $("#sidebarToggle").on("click", function () {
-    $("#title").collapse('hide');
-   // Reemplaza "elementoHTML" con el ID o clase del elemento que deseas ocultar
-  });
+$("#sidebarToggle").on("click", function () {
+  borrarTitle();
+});
 
   // Close any open menu accordions when window is resized below 768px
   $(window).resize(function() {
