@@ -31,13 +31,26 @@ color: white;
 cursor: pointer;
 }
 
+.links{
 
+
+text-decoration: none;
+
+}
 
 .logoSena{
 
 width: 50px;
 
 margin-right: 4%;
+
+}
+
+.login_btn{
+
+
+border: 2px solid black;
+box-shadow: 2px 2px black;
 
 }
 
@@ -106,3 +119,5 @@ color: white;
 .links a{
 margin-left: 4px;
 }
+
+
