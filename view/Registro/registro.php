@@ -73,7 +73,7 @@
                 <a class="nav-link" href="../Inventario/Inventario.php">
                     <i class="fa fa-database" aria-hidden="true"></i>
 
-                    <span>Inventario</span>
+                    <span>Registros</span>
                 </a>
             </li>
 
@@ -140,7 +140,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Juancho</span>
                                 <img class="img-profile rounded-circle" src="../../assets/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->

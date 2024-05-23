@@ -7,37 +7,25 @@ $mysql = new MiPDO();
 
 $mysql->conectar();
 try {
-    if (isset($_SESSION['cedulaUsuario']) && isset($_SESSION['password']) && isset($_SESSION['login'])) {
-        $id = $_SESSION['cedulaUsuario'];
-        $consulta = $mysql->ejecutarConsulta("SELECT COUNT(*),estado FROM usuario WHERE cedulaUsuario = ?", [$id]);
-        $fila = $consulta->fetch();
-
-        if ($fila["estado"] != "Activo") {
-            $_SESSION['message'] = "Su estado actual es inactivo";
-              echo "xd";
-            exit;
-        } else {
-           
-        }
-    }
+ 
 
     $id = $_POST['cedulaUsuario'];
     $password = $_POST['passUsuario'];
 
-    $consulta = $mysql->ejecutarConsulta("SELECT * FROM usuario WHERE cedulaUsuario = ?", [$id]);
+    $consulta = $mysql->ejecutarConsulta("SELECT * FROM usuario WHERE idUsuario = ?", [$id]);
 
   
     $fila = $consulta->fetch();
 
     if ($fila) {
         if ($password == $fila['passUsuario']) {
-            $_SESSION['cedulaUsuario'] = $fila['cedulaUsuario'];
+            $_SESSION['cedulaUsuario'] = $fila['idUsuario'];
             $_SESSION['nombreUsuario'] = $fila['nombreUsuario'];
             $_SESSION['apellidoUsuario'] = $fila['apellidoUsuario'];
             $_SESSION['password'] = $fila['passUsuario']; // Cambio a 'passUsuario'
             $_SESSION['rol'] = $fila['rolUsuario'];
             $_SESSION['login'] = true;
-            header("Location: ../view/Registro/registro.HTML");
+            header("Location: ../view/Registro/registro.php");
             exit;
         } else {
             $_SESSION['message'] = 'Contraseña incorrecta';
@@ -46,14 +34,14 @@ try {
         }
     } else {
         $_SESSION['message'] = 'Cédula de usuario no existe';
-        header("Location: ../index.php");
+       echo $id;
         exit;
     }
 } catch (PDOException $e) {
     session_destroy();
     session_start();
     $_SESSION['message'] = 'Algo inesperado ocurrió... Contacta con un administrador.';
-    header("Location: ../index.php");
+    echo $e;
     exit;
 }
 

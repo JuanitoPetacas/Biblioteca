@@ -6,8 +6,7 @@ $conexion = new MiPDO();
  // Crea una nueva instancia de la clase
 $conexion->conectar();
 
-$consulta= $conexion->ejecutarConsulta("SELECT * FROM inventario");
-
+$consulta= $conexion->ejecutarConsulta("SELECT aprendiz.idAprendiz, aprendiz.tipoDocumento, aprendiz.nombreAprendiz, aprendiz.apellidoAprendiz, aprendiz.fichaAprendiz, aprendiz.programaAprendiz, aprendiz.estadoRegistro, detallefuncion.idFuncion, detallefuncion.fecha, funcion.descripcion FROM aprendiz LEFT JOIN detallefuncion ON detallefuncion.idAprendiz = aprendiz.idAprendiz LEFT JOIN funcion ON detallefuncion.idFuncion = funcion.idFuncion; ");
 
 
 $conexion->desconectar();
@@ -76,7 +75,7 @@ $conexion->desconectar();
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link " href="#">
+                <a class="nav-link " href="../Registro/registro.HTML">
                     <i class="fa fa-address-book" aria-hidden="true"></i>
 
                     <span>Registro</span>
@@ -89,7 +88,7 @@ $conexion->desconectar();
                 <a class="nav-link" href="../Inventario/Inventario.php">
                     <i class="fa fa-database" aria-hidden="true"></i>
 
-                    <span>Inventario</span>
+                    <span>Registros</span>
                 </a>
             </li>
 
@@ -347,36 +346,35 @@ $conexion->desconectar();
                         </div>
                         <div class="card-body">
 
-                            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Registrar libro
-                            </button>
-
+                    
 
 
                             <div class="table">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>IdLibro</th>
+                                        <th>Identificacion</th>
+                                            <th>Tipo de documento</th>
                                             <th>Nombre</th>
-                                            <th>Autor</th>
-                                            <th>Lugar de edicion</th>
-                                            <th>Editorial</th>
-                                            <th>Año de edicion</th>
-                                            <th>Numero de paginas</th>
+                                            <th>Apellido</th>
+                                            <th>Ficha</th>
+                                            <th>Programa de formación</th>
+                                            <th>Funcion</th>
+                                            <th>Fecha</th>
                                             <th>Acciones</th>
                                             
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>IdLibro</th>
+                                            <th>Identificacion</th>
+                                            <th>Tipo de documento</th>
                                             <th>Nombre</th>
-                                            <th>Autor</th>
-                                            <th>Lugar de edicion</th>
-                                            <th>Editorial</th>
-                                            <th>Año de edicion</th>
-                                            <th>Numero de paginas</th>
+                                            <th>Apellido</th>
+                                            <th>Ficha</th>
+                                            <th>Programa de formación</th>
+                                            <th>Funcion</th>
+                                            <th>Fecha</th>
                                             <th>Acciones</th>
                                      
                                         
@@ -387,21 +385,36 @@ $conexion->desconectar();
                                             
                                             ?>
                                             
-                                            <tr>
+                                           
+
+                                                    <?php if($fila["estadoRegistro"] == "Activo"){ ?>
+                                                              
+                                                                            <tr>
+                                                                            <form action="../../model/cambiarEstado.php" method="post" >
+                                                                            <td><?php echo $fila["idAprendiz"] ?></td>
+                                                                            <input type="hidden" name="idAprendiz" value="<?php echo $fila["idAprendiz"]; ?>">
+                                                                            <td><?php echo $fila["tipoDocumento"] ?></td>
 
 
-                                                            <td><?php echo $fila["idLibro"] ?></td>
+                                                                            <td><?php echo $fila["nombreAprendiz"] ?></td>
+                                                                            <td><?php echo $fila["apellidoAprendiz"] ?></td>
+                                                                            <td><?php echo $fila["fichaAprendiz"] ?></td>
+                                                                            <td><?php echo $fila["programaAprendiz"] ?></td>
+                                                                            <td><?php echo $fila["descripcion"] ?></td>
+                                                                            <td><?php echo $fila["fecha"] ?></td>
+                                                                            <td> <button class="btn btn-danger mb-3" type="submit" data-dismiss="modal">Anular</button></td>
+                                                                          
+                                                                            </form>
 
-                                                            <td><?php echo $fila["nombreLibro"] ?></td>
+                                                                            </tr>
+                                                                            
+                                                  <?php  }else{
 
-                                                            <td><?php echo $fila["autor"] ?></td>
-                                                            <td><?php echo $fila["lugarEdicion"] ?></td>
-                                                            <td><?php echo $fila["editorial"] ?></td>
-                                                            <td><?php echo $fila["yearEdition"] ?></td>
-                                                            <td><?php echo $fila["numeroPaginas"] ?></td>
-                                                            <td> <button class="btn btn-success mb-3" type="button" data-dismiss="modal">Editar</button>  <button class="btn btn-danger mb-3" type="button" data-dismiss="modal">Eliminar</button></td>
+
+
+                                                  } ?>
                                                           
-                                            </tr>
+                                       
                                             
                                         
                                            
@@ -481,26 +494,6 @@ $conexion->desconectar();
     <script src="../../assets/js/demo/datatables-demo.js"></script>
     <script src="../../assets/js/pepe.js"></script>
 
-<!-- Button trigger modal -->
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 </body>
