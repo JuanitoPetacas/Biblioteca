@@ -30,7 +30,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `aprendiz` (
   `idAprendiz` bigint(20) NOT NULL,
   `tipoDocumento` varchar(200) DEFAULT NULL,
-  `identificacion` bigint(20) DEFAULT NULL,
   `nombreAprendiz` varchar(200) DEFAULT NULL,
   `apellidoAprendiz` varchar(200) DEFAULT NULL,
   `fichaAprendiz` bigint(20) DEFAULT NULL,
@@ -44,7 +43,7 @@ CREATE TABLE `aprendiz` (
 --
 
 CREATE TABLE `detallefuncion` (
-  `idDetalle` bigint(20) NOT NULL,
+  `idDetalle` bigint(20) NOT NULL AUTO_INCREMENT,
   `idAprendiz` bigint(20) DEFAULT NULL,
   `idFuncion` bigint(20) DEFAULT NULL,
   `fecha` date DEFAULT NULL
@@ -57,7 +56,7 @@ CREATE TABLE `detallefuncion` (
 --
 
 CREATE TABLE `funcion` (
-  `idFuncion` bigint(20) NOT NULL,
+  `idFuncion` bigint(20) NOT NULL AUTO_INCREMENT,
   `descripcion` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

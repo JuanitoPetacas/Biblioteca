@@ -13,9 +13,7 @@
 
     <!-- Custom fonts for this template -->
     <link href="../../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../../assets/css/sb-admin-2.min.css" rel="stylesheet">
@@ -37,8 +35,7 @@
             <!-- Sidebar - Brand -->
             <div class="d-flex align-items-center">
                 <div class="icon-dash" id="icon-dash">
-                    <img src="../../assets/img/kisspng-logo-brand-line-5af66c2d1dfee7.1992848415260989891229.png" alt=""
-                        srcset="" class="" width="80rem" height="55rem">
+                    <img src="../../assets/img/kisspng-logo-brand-line-5af66c2d1dfee7.1992848415260989891229.png" alt="" srcset="" class="" width="80rem" height="55rem">
                 </div>
                 <div class="title-dash sidebar-brand-text" id="title">BIBLIOSENA</div>
             </div>
@@ -78,8 +75,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fa fa-database" aria-hidden="true"></i>
 
 
@@ -88,8 +84,7 @@
 
                     <span>Graficas</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Utilities:</h6>
                         <a class="collapse-item" href="utilities-color.html">Colors</a>
@@ -138,14 +133,12 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle" src="../../assets/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Perfil
@@ -184,89 +177,83 @@
                                     <div class="card card-registration my-4">
                                         <div class="row g-0">
                                             <div class="col-xl-6 d-none d-xl-block">
-                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
-                                                    alt="Sample photo" class="img-fluid"
-                                                    style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                                                <img src="../../assets/img/library-5219747_1920.jpg" alt="Sample photo" class="img-fluid" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; height: 800px;;" />
                                             </div>
                                             <div class="col-lg-6" style="margin-top: 5rem;">
                                                 <div class="card-body p-md-5 text-black">
                                                     <h3 class="mb-5 text-uppercase text-center">Registro del Aprendiz
                                                     </h3>
-                                                    <div class="row pt-2">
-                                                        <div class="col-md-6 mb-3">
-                                                            <div data-mdb-input-init class="form-outline">
-                                                                <label class="form-label" for="form3Example1n">Tipo de
-                                                                    Documento</label>
-                                                                <select class="form-control form-control-lg  mb-3"
-                                                                    aria-label=".form-select-lg example ">
-                                                                    <option selected>C.C</option>
-                                                                    <option value="1">T.I</option>
-                                                                    <option value="2">Registro Civil</option>
-                                                                    <option value="3">Cedula Extranjera</option>
-                                                                </select>
+                                                    <form method="post" action="../../controller/register.php">
+                                                        <div class="row pt-2">
+                                                            <div class="col-md-6 mb-3">
+                                                                <div data-mdb-input-init class="form-outline">
+                                                                    <label class="form-label" for="form3Example1n">Tipo de
+                                                                        Documento</label>
+                                                                    <select class="form-control form-control-lg  mb-3" aria-label=".form-select-lg example " name="tipoDoc">
+                                                                        <option selected>C.C</option>
+                                                                        <option value="1">T.I</option>
+                                                                        <option value="2">Registro Civil</option>
+                                                                        <option value="3">Cedula Extranjera</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-4">
+                                                                <div data-mdb-input-init class="form-outline">
+                                                                    <label class="form-label" for="form3Example1n">Identificacion</label>
+                                                                    <input type="text" id="form3Example1n" class="form-control form-control-lg" name="id" />
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6 mb-4">
-                                                            <div data-mdb-input-init class="form-outline">
-                                                                <label class="form-label"
-                                                                    for="form3Example1n">Identificacion</label>
-                                                                <input type="text" id="form3Example1n"
-                                                                    class="form-control form-control-lg" />
+                                                        <div class="row pt-2">
+                                                            <div class="col-md-6 mb-3">
+                                                                <div data-mdb-input-init class="form-outline">
+                                                                    <label class="form-label" for="form3Example1m1">Nombre
+                                                                        Aprendiz</label>
+                                                                    <input type="text" id="form3Example1m1" class="form-control form-control-lg" name="nombre" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <div data-mdb-input-init class="form-outline">
+                                                                    <label class="form-label" for="form3Example1n1">Apelldio
+                                                                        Aprendiz</label>
+                                                                    <input type="text" id="form3Example1n1" class="form-control form-control-lg" name="apellido" />
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row pt-2">
-                                                        <div class="col-md-6 mb-3">
-                                                            <div data-mdb-input-init class="form-outline">
-                                                                <label class="form-label" for="form3Example1m1">Nombre
-                                                                    Aprendiz</label>
-                                                                <input type="text" id="form3Example1m1"
-                                                                    class="form-control form-control-lg" />
+                                                        <div class="row pt-2">
+                                                            <div data-mdb-input-init class="col-md-6 mb-3">
+                                                                <div data-mdb-input-init class="form-outline">
+                                                                    <label class="form-label" for="form3Example8">Ficha</label>
+                                                                    <input type="text" id="form3Example8" class="form-control form-control-lg" name="ficha" />
+                                                                </div>
+                                                            </div>
+                                                            <div data-mdb-input-init class="col-md-6 mb-3">
+                                                                <div data-mdb-input-init class="form-outline">
+                                                                    <label class="form-label" for="form3Example8">Programa</label>
+                                                                    <input type="text" id="form3Example8" class="form-control form-control-lg" name="programa" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <div data-mdb-input-init class="form-outline">
+                                                                    <label class="form-label" for="form3Example1n">Funcion
+                                                                        del Aprendiz</label>
+                                                                    <select class="form-control form-control-lg mb-6" aria-label=".form-select-lg example " name="funcion">
+                                                                        <option selected>Prestamo Libro</option>
+                                                                        <option value="1">Uso de Dispositivo</option>
+                                                                        <option value="2">Estudio</option>
+                                                                    </select>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6 mb-3">
-                                                            <div data-mdb-input-init class="form-outline">
-                                                                <label class="form-label" for="form3Example1n1">Apelldio
-                                                                    Aprendiz</label>
-                                                                <input type="text" id="form3Example1n1"
-                                                                    class="form-control form-control-lg" />
+                                                        <div class="d-flex justify-content-end " style="margin-top: 3rem;">
+                                                            <div class="col-6 d-flex justify-content-center">
+                                                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary btn-lg">Limpiar</button>
+                                                            </div>
+                                                            <div class="col-6 d-flex justify-content-center">
+                                                                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg">Enviar</button>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row pt-2">
-                                                        <div data-mdb-input-init class="col-md-6 mb-3">
-                                                            <div data-mdb-input-init class="form-outline">
-                                                                <label class="form-label"
-                                                                    for="form3Example8">Ficha</label>
-                                                                <input type="text" id="form3Example8"
-                                                                    class="form-control form-control-lg" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6 mb-3">
-                                                            <div data-mdb-input-init class="form-outline">
-                                                                <label class="form-label" for="form3Example1n">Funcion
-                                                                    del Aprendiz</label>
-                                                                <select class="form-control form-control-lg mb-6"
-                                                                    aria-label=".form-select-lg example ">
-                                                                    <option selected>Prestamo Libro</option>
-                                                                    <option value="1">Uso de Dispositivo</option>
-                                                                    <option value="2">Estudio</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex justify-content-end " style="margin-top: 3rem;">
-                                                        <div class="col-6 d-flex justify-content-center">
-                                                            <button type="button" data-mdb-button-init
-                                                                data-mdb-ripple-init
-                                                                class="btn btn-secondary btn-lg">Limpiar</button>
-                                                        </div>
-                                                        <div class="col-6 d-flex justify-content-center">
-                                                            <button type="button" data-mdb-button-init
-                                                                data-mdb-ripple-init
-                                                                class="btn btn-primary btn-lg">Enviar</button>
-                                                        </div>
-                                                    </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -304,8 +291,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -322,6 +308,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="../../assets/vendor/jquery/jquery.min.js"></script>
@@ -344,3 +332,14 @@
 </body>
 
 </html>
+<script>
+    if (<?php echo ($_GET['Hecho']) ?> == true) {
+        Swal.fire({
+            icon: "success",
+            title: "Aprendiz Ingresado Correctamente",
+            text: "<?php echo ($_GET['Mensaje']) ?>",
+
+        });
+
+    }
+</script>
