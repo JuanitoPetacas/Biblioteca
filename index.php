@@ -56,23 +56,23 @@
 				</div>
 			</div>
 			<div class="card-body mt-5">
-				<form>
+				<form action="./model/login.php" method="post">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="Cedula">
+						<input type="text" class="form-control" placeholder="Cedula" name="cedulaUsuario">
 						
 					</div>
 					<div class="input-group form-group mt-3">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="Contraseña">
+						<input type="password" class="form-control" placeholder="Contraseña" name="passUsuario">
 					</div>
 				
 					<div class="form-group d-flex justify-content-center mt-5">
-					<a href="./view/Registro/registro.HTML" class="links btn float-right login_btn">Ingresar</a></button>	
+					<button type="submit" class="links btn float-right login_btn">Ingresar</button>	
 					
 				
 					</div>
